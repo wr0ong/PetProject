@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -28,6 +29,12 @@ class UsersFragment : Fragment() {
 
         binding.emailVerification.setOnClickListener {
             sendEmailVerification()
+        }
+
+        binding.signOut.setOnClickListener {
+            signOut()
+            view.findNavController()
+                .navigate(R.id.action_usersFragment_to_welcomeFragment)
         }
 
         return view
@@ -59,6 +66,14 @@ class UsersFragment : Fragment() {
             }
     }
 
+    private fun signOut(){
+        auth.signOut()
+        Toast.makeText(
+            context,
+            "Signed out",
+            Toast.LENGTH_SHORT,
+        ).show()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
