@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "943206625063",
+    "project_id": "wrng-dcc2e",
+    "storage_bucket": "wrng-dcc2e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943206625063:android:c92fdb147a351f150d0302",
+        "android_client_info": {
+          "package_name": "com.hfad.pet3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXu5OUoQPRnwD4GQxrAzlCQCrY6wA1bSc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

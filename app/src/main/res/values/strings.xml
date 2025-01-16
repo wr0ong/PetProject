@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">pet3</string>
+    <string name="fragment_welcome_user_email">Email…</string>
+    <string name="fragment_welcome_user_password">Password…</string>
+    <string name="fragment_welcome_button">Register</string>
+    <string name="fragment_welcome_textview">Forgot your password?</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_register_main_text">Enter your Email and Password</string>
+    <string name="fragment_register_button">Push to register</string>
+    <string name="fragment_welcome_button_enter">Enter</string>
+    <string name="fragment_users_welcome_text">Welcome to App</string>
+    <string name="fragment_users_test_image_description">Test Image</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="send_email_verification">Send email verification</string>
+
+
+</resources>
