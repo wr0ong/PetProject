@@ -32,40 +32,48 @@ class WelcomeFragment : Fragment() {
 
         binding.fragmentWelcomeButtonEnter.setOnClickListener {
 
-                    signIn(
-                        binding.fragmentWelcomeUserEmail.text.toString(),
-                        binding.fragmentWelcomeUserPassword.text.toString()
-                    )
+            signIn(
+                binding.fragmentWelcomeUserEmail.text.toString(),
+                binding.fragmentWelcomeUserPassword.text.toString()
+            )
 
 
+        }
 
-            }
-
-        binding.fragmentWelcomeRegisterButton.setOnClickListener (
+        binding.fragmentWelcomeRegisterButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 R.id.action_welcomeFragment_to_registerFragment
             )
         )
 
         binding.fragmentWelcomeForgotPassword.setOnClickListener {
-            auth.sendPasswordResetEmail(binding.fragmentWelcomeUserEmail.text.toString())
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Log.d(TAG, "Email sent.")
-                        Toast.makeText(
-                            context,
-                            SUCCESS_SEND_PASSWORD,
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                    }
-                    else { Toast.makeText(
+                sendPassword(binding.fragmentWelcomeForgotPassword.text.toString())
+            }
+        return view
+    }
+
+    private fun sendPassword (email: String) {
+        if (!validateForm()) {
+            return
+        }
+
+        auth.sendPasswordResetEmail(email)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d(TAG, "Email sent.")
+                    Toast.makeText(
+                        context,
+                        SUCCESS_SEND_PASSWORD,
+                        Toast.LENGTH_SHORT,
+                    ).show()
+                } else {
+                    Toast.makeText(
                         context,
                         FAILURE_SEND_PASSWORD,
                         Toast.LENGTH_SHORT,
-                    ).show() }
+                    ).show()
                 }
-        }
-        return view
+            }
     }
 
 

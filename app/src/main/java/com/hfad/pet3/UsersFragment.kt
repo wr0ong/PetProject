@@ -70,7 +70,7 @@ class UsersFragment : Fragment() {
         auth.signOut()
         Toast.makeText(
             context,
-            "Signed out",
+            SIGNED_OUT,
             Toast.LENGTH_SHORT,
         ).show()
     }
@@ -83,3 +83,4 @@ class UsersFragment : Fragment() {
 
 const val SUCCESS_SEND_VERIFICATION = "Verification email sent to"
 const val FAILURE_SEND_VERIFICATION = "Failed to send verification email"
+const val SIGNED_OUT = "You signed out"

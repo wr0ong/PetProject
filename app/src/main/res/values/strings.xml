@@ -18,6 +18,7 @@
     <string name="signed_out">Signed Out</string>
     <string name="send_email_verification">Send email verification</string>
     <string name="sign_out">Sing Out</string>
+    <string name="welcome">Welcome to App!</string>
 
 
 </resources>

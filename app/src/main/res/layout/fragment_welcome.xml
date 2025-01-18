@@ -1,67 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/fragment_welcome_constraint_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_welcome_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".WelcomeFragment">
+    tools:context=".WelcomeFragment"
+    tools:ignore="ExtraText">
 
-    <EditText
-        android:id="@+id/fragment_welcome_user_email"
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_first"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:autofillHints="emailAddress"
-        android:layout_marginHorizontal="15dp"
-        android:layout_gravity="center"
-        android:hint="@string/fragment_welcome_user_email"
-        android:inputType="text"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="TextFields" />
+        app:passwordToggleEnabled="true"
+        tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/fragment_welcome_user_password"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_welcome_user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints="emailAddress"
+            android:hint="@string/fragment_welcome_user_email"
+            android:inputType="text"
+            tools:ignore="TextFields" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_layout_second"
+        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="15dp"
-        android:autofillHints="password"
-        android:hint="@string/fragment_welcome_user_password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_user_email"
-        tools:ignore="TextFields" />
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_layout_first"
+        tools:ignore="MissingConstraints">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_welcome_user_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autofillHints="password"
+            android:hint="@string/fragment_welcome_user_password"
+            android:inputType="textPassword"
+            tools:ignore="TextFields" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fragment_welcome_button_enter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:text="@string/fragment_welcome_button_enter"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_user_password"/>
+        android:background="@drawable/shape_rounds_variants"
+        android:text="@string/fragment_welcome_button_enter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_layout_second" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fragment_welcome_register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
-        android:text="@string/fragment_welcome_button"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_button_enter"/>
+        android:background="@drawable/shape_rounds_variants"
+        android:text="@string/fragment_welcome_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_button_enter" />
 
     <TextView
         android:id="@+id/fragment_welcome_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment_welcome_textview"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_register_button"
         android:layout_marginTop="25dp"
+        android:text="@string/fragment_welcome_textview"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_register_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
