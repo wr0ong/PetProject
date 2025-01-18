@@ -7,6 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_marginTop="10dp"
     tools:context=".RegisterFragment">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="20sp"
         android:text="@string/fragment_register_main_text" />
 
     <EditText
@@ -33,10 +35,13 @@
         android:hint="@string/fragment_welcome_user_password"
         android:inputType="textPassword" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/fragment_register_register_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@drawable/shape_rounds_variants"
+        android:padding="10dp"
+        android:textSize="18sp"
         android:text="@string/fragment_register_button" />
 </LinearLayout>

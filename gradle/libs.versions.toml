@@ -1,5 +1,5 @@
 [versions]
-agp = "8.9.0-alpha06"
+agp = "8.9.0-alpha09"
 design = "28.0.0"
 firebaseAnalytics = "22.1.2"
 firebaseBom = "33.7.0"
