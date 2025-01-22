@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation ("org.jetbrains.kotlin:kotlin-stdlib")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.cardview:cardview:1.0.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

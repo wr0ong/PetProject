@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    android:layout_marginTop="20dp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/fragment_users_welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment_users_welcome_text"
-        android:textSize="25sp"
-        android:layout_gravity="center_horizontal"/>
-
-    <ImageView
-        android:layout_width="401dp"
-        android:layout_height="516dp"
-        android:src="@drawable/welcome_image"
-        android:scaleType="centerCrop"
-        android:padding="10dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/emailVerification"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:padding="10dp"
-        android:background="@drawable/shape_rounds_variants"
-        android:text="@string/send_email_verification"
-        android:textSize="20sp"/>
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/shape_rounds_variants"
-        android:text="@string/sign_out"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/fragment_users_welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="@string/fragment_users_welcome_text"
+            android:textSize="25sp" />
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/card_view_design" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/emailVerification"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/shape_rounds_variants"
+            android:padding="10dp"
+            android:text="@string/send_email_verification"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signOut"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rounds_variants"
+            android:padding="10dp"
+            android:text="@string/sign_out"
+            android:textSize="20sp" />
+    </LinearLayout>
+</ScrollView>

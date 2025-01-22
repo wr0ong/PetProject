@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -27,6 +28,17 @@ class UsersFragment : Fragment() {
         auth = Firebase.auth
         val view = binding.root
 
+        val recyclerView = binding.recyclerview
+
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        val data = ArrayList<ItemsViewModel>()
+        for (i in 1..20) {
+            data.add(ItemsViewModel(R.drawable.vector_assets, "Item $i"))
+        }
+        val adapter = CustomAdapter(data)
+        recyclerView.adapter = adapter
+
         binding.emailVerification.setOnClickListener {
             sendEmailVerification()
         }
@@ -36,6 +48,7 @@ class UsersFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_usersFragment_to_welcomeFragment)
         }
+
 
         return view
     }
