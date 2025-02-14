@@ -1,96 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_welcome_constraint_layout"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".WelcomeFragment"
-    tools:ignore="ExtraText">
+    android:layout_height="match_parent">
 
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layout_first"
-        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fragment_welcome_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:passwordToggleEnabled="true"
-        tools:ignore="MissingConstraints">
+        android:orientation="vertical"
+        tools:context=".WelcomeFragment"
+        tools:ignore="ExtraText">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/fragment_welcome_user_email"
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_first"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:autofillHints="emailAddress"
-            android:hint="@string/fragment_welcome_user_email"
-            android:inputType="text"
-            tools:ignore="TextFields" />
+            app:endIconMode="password_toggle"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:passwordToggleEnabled="true"
+            tools:ignore="MissingConstraints">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_welcome_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autofillHints="emailAddress"
+                android:hint="@string/fragment_welcome_user_email"
+                android:inputType="text"
+                tools:ignore="TextFields" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_layout_second"
-        style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/input_layout_first"
-        tools:ignore="MissingConstraints">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/fragment_welcome_user_password"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_second"
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:autofillHints="password"
-            android:hint="@string/fragment_welcome_user_password"
-            android:inputType="textPassword"
-            tools:ignore="TextFields" />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_first"
+            tools:ignore="MissingConstraints">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/fragment_welcome_button_enter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/shape_rounds_variants"
-        android:text="@string/fragment_welcome_button_enter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_layout_second" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_welcome_user_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:autofillHints="password"
+                android:hint="@string/fragment_welcome_user_password"
+                android:inputType="textPassword"
+                tools:ignore="TextFields" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/fragment_welcome_register_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/shape_rounds_variants"
-        android:text="@string/fragment_welcome_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_button_enter" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fragment_welcome_button_enter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_rounds_variants"
+            android:text="@string/fragment_welcome_button_enter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_layout_second" />
 
-    <TextView
-        android:id="@+id/fragment_welcome_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/fragment_welcome_textview"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_register_button" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fragment_welcome_register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/shape_rounds_variants"
+            android:text="@string/fragment_welcome_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_button_enter" />
+
+        <TextView
+            android:id="@+id/fragment_welcome_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/fragment_welcome_textview"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_welcome_register_button" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

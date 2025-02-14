@@ -1,3 +1,5 @@
+import java.util.regex.Pattern.compile
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -58,7 +60,17 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation ("org.jetbrains.kotlin:kotlin-stdlib")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.cardview:cardview:1.0.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation ("com.android.support:appcompat-v7:28.0.0")
+    implementation ("com.android.support:recyclerview-v7:23.4.0")
+
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
+    implementation ("com.github.bumptech.glide:glide:4.13.2")
 }
