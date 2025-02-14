@@ -110,7 +110,7 @@ class UsersFragment : Fragment() {
     private fun prepareRecyclerView() {
         movieAdapter = MovieAdapter()
         binding.rvMovies.apply {
-            val layoutManager = GridLayoutManager(context, 2)
+            val layoutManager = GridLayoutManager(context, 1)
             adapter = movieAdapter
         }
     }

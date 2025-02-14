@@ -9,24 +9,25 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MovieViewModel : ViewModel() {
+class MovieViewModel private constructor(val apiKey: String) : ViewModel() {
     private var movieLiveData = MutableLiveData<List<MovieResult>>()
     fun getPopularMovies() {
-        RetrofitInstance.api.getPopularMovies("69d66957eebff9666ea46bd464773cf0").enqueue(object  : Callback<Movie>{
+        RetrofitInstance.api.getPopularMovies(apiKey).enqueue(object : Callback<Movie> {
             override fun onResponse(call: Call<Movie>, response: Response<Movie>) {
-                if (response.body()!=null){
+                if (response.body() != null) {
                     movieLiveData.value = response.body()!!.results
-                }
-                else{
+                } else {
                     return
                 }
             }
+
             override fun onFailure(call: Call<Movie>, t: Throwable) {
-                Log.d("TAG",t.message.toString())
+                Log.d("TAG", t.message.toString())
             }
         })
     }
-    fun observeMovieLiveData() : LiveData<List<MovieResult>> {
+
+    fun observeMovieLiveData(): LiveData<List<MovieResult>> {
         return movieLiveData
     }
 }
